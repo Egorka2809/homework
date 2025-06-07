@@ -1,0 +1,21 @@
+.boss{
+    border: 2px solid black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: auto;
+    max-width: 1350px;
+    max-height: 600px;
+    background: rgba(136, 177, 206, 0.704);
+}
+.block {
+    width: 250px;
+    height: 200px;
+    background: rgb(130, 160, 242);
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 5px;
+    display: inline-block;
+    opacity: 0.9;
+    box-shadow: inset 3px 3px 9px black, inset -3px -3px 9px black;
+}
