@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(2, 2, 33);
+}
+
+p {
+    color: white;
+    font-size: 2em;
+}
+
+.circle {
+    background: red;
+    width: 100px;
+    height: 100px;
+    border-radius: 50% 50%;
+}
+
+.position__rectangle {
+    position: relative;
+    background: #fff;
+    height: 100px;
+    border-radius: 30px;
+}
+
+/* ====================================================== */
+
+.white {
+    position: fixed;
+    left: 50%;
+    right: 50px;
+    bottom: 100px;
+}
+
+.red {
+    position: absolute;
+    bottom: 50%;
+    right: 80%;
+
+}
