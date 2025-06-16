@@ -1,6 +1,7 @@
-const fistname = "egor"
+const firstname = 'egor'
+console.log(firstname)
 let age = 13 
-console.log(firstname, age)
+console.log(age)
 // =========================================================
 function hello(name) {
     return "hello " + name
