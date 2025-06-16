@@ -1,3 +1,7 @@
+const fistname = "egor"
+let age = 13 
+console.log(firstname, age)
+// =========================================================
 function hello(name) {
     return "hello " + name
 }
