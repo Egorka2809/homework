@@ -1,7 +1,4 @@
-const firstname = 'egor'
-console.log(firstname)
-let age = 13 
-console.log(age)
+
 // =========================================================
 function hello(name) {
     return "hello " + name
