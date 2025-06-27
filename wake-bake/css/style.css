@@ -4,6 +4,7 @@
     --general-bg: #FFF9f4;
     --accent-color: #FFA55C;
     --accent-bg: #FFE0CB;
+    --transition: all .4s;
 }
 
 .body {
@@ -186,7 +187,7 @@
     justify-content: space-between;
     align-items: flex-end;
     gap: 30px;
-    
+
 }
 
 .hero__content {
@@ -245,8 +246,9 @@
 .hero__img {
     position: relative;
     margin-right: 246px;
-    
+
 }
+
 .hero__img>img {
     width: 100%;
 }
@@ -304,14 +306,129 @@
 }
 
 
-/* ========================Адаптив========================= */
+/* =====================footer============================= */
+.footer {
+    color: var(--general-bg);
+    background: #AB8261;
+    padding: 30px 0 60px;
+}
 
+.footer__inner {
+    display: grid;
+    gap: 40px 15px;
+    grid-template-columns: 1fr 1.2fr 1.2fr auto;
+}
+
+.footer__col {
+    margin-top: 30px;
+}
+
+.footer__col:last-child {
+    justify-items: end;
+}
+
+.footer__logo {
+    display: block;
+    max-width: 240px;
+}
+
+.footer__logo img {
+    width: 100%;
+}
+
+.footer__logo-text {}
+
+.socials {}
+
+.socials__list {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+.socials__items {}
+
+.socials__link path {
+    transition: var(--transition);
+}
+
+.socials__link:hover path {
+    fill: var(--accent-color);
+}
+
+.footer__col-list {
+    margin-top: -5px;
+}
+
+.footer__col-item {
+    margin-bottom: 10px;
+}
+
+.footer__col-link {
+    display: block;
+    padding: 5px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.footer__col-link:last-child {
+    margin-bottom: 0;
+}
+
+.footer__col-link::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50% 50%;
+    background: var(--accent-color);
+
+    opacity: 0;
+    transition: all .4s;
+}
+
+.footer__col-link:hover::before {
+    opacity: 1;
+}
+
+.footer__contact-list {}
+
+.footer__contact-item {}
+
+.footer__contact-link {}
+
+.footer__col-tel {}
+
+.footer__col-number {
+    display: block;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 160%;
+    margin-bottom: 47px;
+    transition: var(--transition);
+}
+
+.footer__col-number:hover {
+    color: var(--accent-color);
+}
+
+.footer__col-copy {}
+
+/* ======================================================== */
+/* ========================Адаптив========================= */
+/* ======================================================== */
 
 /*  Делается через media: в скобках условие, а в других класс. А в классе что будет делаеться после задонного */
 @media (max-width: 1200px) {
+
     .hero__img {
-    position: relative;
-    margin: 0;
+        position: relative;
+        margin: 0;
     }
 
     .hero__img-control {
@@ -319,6 +436,19 @@
         max-width: none;
         padding-top: 30px;
     }
+
+    .footer__inner {
+        justify-content: space-between;
+        grid-template-columns: 1fr 1.2fr 1.2fr auto;
+        grid-template-rows: auto auto;
+        grid-template-columns: repeat(3, auto);
+    }
+
+    .footer__col:last-child {
+        grid-column: 1 / -1;
+        justify-items: center;
+    }
+
 }
 
 @media (max-width: 900px) {
@@ -349,21 +479,50 @@
     .burger-icon {
         display: flex;
     }
+
+    /*  ================ */
+    .footer__inner {
+        justify-content: center;
+        grid-template: none;
+        text-align: center;
+        gap: 0;
+    }
+
+    .footer__col:first-child {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .socials__list {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer__logo img {
+        padding-left: 30px;
+    }
+
+    .footer__col:nth-child(3) {
+        margin-bottom: 10px;
+    }
 }
 
 @media (max-width: 800px) {
-    .hero__img{
-    display: none;
+    .hero__img {
+        display: none;
     }
+
     .hero__img-control--mobile {
-    display: flex;
-    margin: -50px 0 30px;
+        display: flex;
+        margin: -50px 0 30px;
     }
+
     .hero__content {
         max-width: none;
         display: flex;
         flex-direction: column;
-        align-items:center;
+        align-items: center;
         text-align: center;
     }
 }
@@ -372,6 +531,7 @@
     .hero {
         padding-bottom: 70px;
     }
+
     .hero__title {
         font-size: 12vw;
     }
