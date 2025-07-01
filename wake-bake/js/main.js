@@ -26,7 +26,7 @@
     }
 
 })()
-
+// ================================================================
 const modal = document.querySelector ('.modal')
 const modalButton = document.querySelector ('.about__img-button') 
 
@@ -45,4 +45,22 @@ function closeModal(e) {
     if(target.closest('.modal__cansel') || target.classList.contains('modal')) {
         document.body.classList.remove('body--opened-modal')
     }
+}
+// ==============================================================
+const tabControls = document.querySelector('.tab__controls')
+
+tabControls.addEventListener('click', toggleTab)
+
+
+function toggleTab(e) {
+    const tabControl = e.target.closest('.tab__controls-link')
+
+    if (!tabControl) return
+
+    e.preventDefault()
+
+    const tabContentID = tabControl.getAttribute('href')
+
+    document.querySelector(tabContentID).classList.add('tab-content--show')
+
 }
