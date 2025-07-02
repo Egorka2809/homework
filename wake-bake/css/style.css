@@ -616,7 +616,6 @@
 
 .tab__controls-link:hover {
     background: var(--accent-bg);
-    
 }
 
 .tab-controls__link--active:hover {
@@ -628,19 +627,124 @@
 }
 
 .tab-content {
-    background: #6d6c6cb9;
-    border-radius: 20px;
-    height: 400px;
-    font-size: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     display: none;
 }
 
 .tab-content--show {
+    display: block;
+}
+
+.accordion-list {
+}
+.accordion-list__item {
+    margin-bottom: 30px;
+    border: 1px solid var(--accent-color);
+    border-radius: 20px;
+}
+.accordion-list__item:last-child {
+    margin-bottom: 0;
+}
+.accordion-list__item--opened {
+    
+}
+.accordion-list__control {
+    padding: 41px 30px;
+    width: 100%;
+    background: transparent;
+    font-size: inherit;
+
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: Gabriola;
+    color: var(--general-text);
+    line-height: 90%;
+    font-size: 42px;
+    
+}
+.accordion-list__control-title {
+
+}
+.accordion-list__control-icon  {
+    border: 1.5px solid var(--accent-color);
+    border-radius: 50% ;
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+
+    transition: var(--transition);
+}
+
+.accordion-list__control-icon svg {
+    margin-left: 2px;
+}
+
+.accordion-list__control-icon path {
+    transition: var(--transition);
+}
+
+
+
+.accordion-list__control:hover .accordion-list__control-icon  {
+    background: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+.accordion-list__control:hover .accordion-list__control-icon path {
+    fill: var(--general-bg);
+}
+
+
+.accordion-list__item--opened .accordion-list__control-icon  {
+    background: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+.accordion-list__item--opened .accordion-list__control-icon path {
+    fill: var(--general-bg);
+}
+.accordion-list__content  {
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.accordion-content {
+    padding: 0 30px 40px;
+    display: flex;
+    gap: 80px; 
+}
+.accordion-list__col {
+    max-width: 507px;
+    width: 100%;
+}
+.accordion-content-title {
+    text-transform: uppercase;
+    color: rgb(206, 170, 208);
+    line-height: 1.60;
+    margin-bottom: 20px;
+}
+
+.accordion-content-text {
+    max-width: 230px;
+}
+.accordion-content__list {
+    
+}
+.accordion-content__item {
+    margin-bottom: 20px;
+    
+}
+.accordion-content__item:last-child {
+    margin-bottom: 0;
+}
+.accordion-content__icon {
+    margin-right: 8px;
 }
 
 /* =====================footer============================= */
