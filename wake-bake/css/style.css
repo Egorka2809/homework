@@ -614,7 +614,7 @@
 
 
 
-.tab-controls__link--active:focus {
+.tab-controls__link--active {
     background: var(--accent-bg);
     box-shadow: 0px 4px 20px 0px rgba(206, 195, 185, 0);
 }
