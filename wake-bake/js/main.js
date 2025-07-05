@@ -27,22 +27,22 @@
 
 })()
 // ================================================================
-const modal = document.querySelector ('.modal')
-const modalButton = document.querySelector ('.about__img-button') 
+const modal = document.querySelector('.modal')
+const modalButton = document.querySelector('.about__img-button')
 
 modalButton.addEventListener('click', openModal)
-modal.addEventListener ('click', closeModal)
+modal.addEventListener('click', closeModal)
 
-function openModal (e) {
+function openModal(e) {
     // e.preventDefualt()
     document.body.classList.toggle('body--opened-modal')
-} 
+}
 function closeModal(e) {
     // e.preventDefualt()
 
-    const target = e.target 
+    const target = e.target
 
-    if(target.closest('.modal__cansel') || target.classList.contains('modal')) {
+    if (target.closest('.modal__cansel') || target.classList.contains('modal')) {
         document.body.classList.remove('body--opened-modal')
     }
 }
@@ -54,7 +54,7 @@ tabControls.addEventListener('click', toggleTab)
 
 function toggleTab(e) {
     const tabControl = e.target.closest('.tab__controls-link')
-    
+
     e.preventDefault()
 
     if (!tabControl) return
@@ -67,7 +67,7 @@ function toggleTab(e) {
 
     activeControl.classList.remove('tab-controls__link--active')
     activeContent.classList.remove('tab-content--show')
-    
+
     tabControl.classList.add('tab-controls__link--active')
     tabContent.classList.add('tab-content--show')
 }
@@ -76,38 +76,69 @@ function toggleTab(e) {
 // ====================================================
 // Аккордеон
 
-    const accordionLists = document.querySelectorAll('.accordion-list');
+const accordionLists = document.querySelectorAll('.accordion-list');
 
-    accordionLists.forEach(el => {
+accordionLists.forEach(el => {
 
-        el.addEventListener('click', (e) => {
+    el.addEventListener('click', (e) => {
 
-            const accordionList = e.currentTarget
-            const accordionOpenedItem = accordionList.querySelector('.accordion-list__item--opened')
-            const accordionOpenedContent = accordionList.querySelector('.accordion-list__item--opened .accordion-list__content')
+        const accordionList = e.currentTarget
+        const accordionOpenedItem = accordionList.querySelector('.accordion-list__item--opened')
+        const accordionOpenedContent = accordionList.querySelector('.accordion-list__item--opened .accordion-list__content')
 
-            const accordionControl = e.target.closest('.accordion-list__control');
-            if (!accordionControl) return
-            e.preventDefault()
-            const accordionItem = accordionControl.parentElement;
-            const accordionContent = accordionControl.nextElementSibling;
+        const accordionControl = e.target.closest('.accordion-list__control');
+        if (!accordionControl) return
+        e.preventDefault()
+        const accordionItem = accordionControl.parentElement;
+        const accordionContent = accordionControl.nextElementSibling;
 
-            if (accordionOpenedItem && accordionItem != accordionOpenedItem) {
-                accordionOpenedItem.classList.remove('accordion-list__item--opened');
-                accordionOpenedContent.style.maxHeight = null;
-            }
-            accordionItem.classList.toggle('accordion-list__item--opened');
+        if (accordionOpenedItem && accordionItem != accordionOpenedItem) {
+            accordionOpenedItem.classList.remove('accordion-list__item--opened');
+            accordionOpenedContent.style.maxHeight = null;
+        }
+        accordionItem.classList.toggle('accordion-list__item--opened');
 
-            if (accordionItem.classList.contains('accordion-list__item--opened')) {
-                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-            } else {
-                accordionContent.style.maxHeight = null;
-            }
-
-        });
+        if (accordionItem.classList.contains('accordion-list__item--opened')) {
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+        } else {
+            accordionContent.style.maxHeight = null;
+        }
 
     });
 
+});
 
 
 
+// Слайдер-галерея
+
+const swiper = new Swiper('.gallery__slider', {
+    spaceBetween: 15,
+    slidesPerView: 1.5,
+
+    pagination: {
+        el: '.gallery__pagination',
+        type: 'fraction'
+    },
+
+    navigation: {
+        nextEl: '.gallery__next',
+        prevEl: '.gallery__prev',
+    },
+
+    breakpoints: {
+        601: {
+            spaceBetween: 32,
+            slidesPerView: 2,
+        },
+        801: {
+            spaceBetween: 32,
+            slidesPerView: 3,
+
+        },
+        1101: {
+            slidesPerView: 4,
+            
+        }
+    }
+});

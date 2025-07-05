@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wake-Bake</title>
-    <link href="css/reset.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/fonts.css" rel="stylesheet">
 </head>
 
 <body class="body ">
@@ -192,7 +191,7 @@
                     <div class="programm__tab-content tab-content  tab-content--show" id="tab1">
                         <ul class="accordion-list">
                             <li class="accordion-list__item ">
-                                <button class="accordion-list__control" type="button">
+                                <button class="accordion-list__control"  type="button">
                                     <h3 class="accordion-list__control-title">
                                         Начало кондитерского пути и создание первого торта
                                     </h3>
@@ -690,7 +689,85 @@
                             <a class="programm__button button" href="">Оставить заявку</a>
                         </div>
                         <div class="programm__img">
-                            <img  src="img/decor/cake.png" alt="">
+                            <img src="img/decor/cake.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="main__gallery gallery">
+                <div class="container">
+                    <div class="gallery__inner">
+                        <div class="gallery__img">
+                            <img src="img/decor/cup-1.png" alt="">
+                        </div>
+                        <div class="gallery__content">
+                            <div class="gallery__info">
+                                <h2 class="gallery__title title">
+                                    Фотогалерея
+                                </h2>
+                                <p class="gallery__text">
+                                    Для комфортного обучения сделаны просторные аудитории, где предоставляется
+                                    всё необходимое оборудование. Здесь наши ученики создают кулинарные шедевры
+                                    под присмотром опытных наставников
+                                </p>
+                            </div>
+                            <div class="gallery__nav">
+                                <button class="gallery__prev swiper__button-disabled" type="button">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.75977 7.73535L1.75977 6.29535L13.9998 6.29535L13.9998 7.73535L1.75977 7.73535Z"
+                                            fill="#FFA55C" />
+                                        <path
+                                            d="M8.74395 1.04L2.76795 7.016L8.74395 12.992L7.73595 14L0.751953 7.016L7.73595 0.0319999L8.74395 1.04Z"
+                                            fill="#FFA55C" />
+                                    </svg>
+                                </button>
+
+                                <div class="gallery__pagination"></div>
+                                <button class="gallery__next swiper__button-disabled" type="button">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.25605 12.96L11.232 6.984L5.25605 1.008L6.26405 -3.0528e-07L13.248 6.984L6.26405 13.968L5.25605 12.96Z"
+                                            fill="#FFA55C" />
+                                        <path
+                                            d="M12.2402 6.26465L12.2402 7.70465L0.000234541 7.70465L0.000234604 6.26465L12.2402 6.26465Z"
+                                            fill="#FFA55C" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slider main container -->
+                    <div class="gallery__slider swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="gallery__wrapper swiper-wrapper">
+                            <!-- Slides -->
+                            <a class="gallery__slide swiper-slide" data-fslightbox="gallery" href="img/content/gallery/girl3.jpg">
+                                <img src="img/content/gallery/girl3.jpg" alt="">
+                            </a>
+                            <a class="gallery__slide swiper-slide" data-fslightbox="gallery" href="img/content/gallery/Rectangle 10.jpg">
+                                <img src="img/content/gallery/Rectangle 10.jpg" alt="">
+                            </a>
+                            <a class="gallery__slide swiper-slide" data-fslightbox="gallery" href="img/content/gallery/Rectangle 11.jpg">
+                                <img src="img/content/gallery/Rectangle 11.jpg" alt="">
+                            </a>
+                            <a class="gallery__slide swiper-slide" data-fslightbox="gallery" href="img/content/gallery/girl3.jpg">
+                                <img src="img/content/gallery/girl3.jpg" alt="">
+                            </a>
+                            <a class="gallery__slide swiper-slide" data-fslightbox="gallery" href="img/content/gallery/Rectangle 12.jpg">
+                                <img src="img/content/gallery/Rectangle 12.jpg" alt="">
+                            </a>
+                            <a class="gallery__slide swiper-slide" data-fslightbox="gallery" href="img/content/gallery/Rectangle 11.jpg">
+                                <img src="img/content/gallery/Rectangle 11.jpg" alt="">
+                            </a>
+                            <a class="gallery__slide swiper-slide" data-fslightbox="gallery" href="img/content/gallery/Rectangle 12.jpg">
+                                <img src="img/content/gallery/Rectangle 12.jpg" alt="">
+                            </a>
+                            
+                        
+                            ...
                         </div>
                     </div>
                 </div>
@@ -801,7 +878,7 @@
             </div>
         </footer>
 
-        <div class="modal ">
+        <div class="modal">
             <div class="modal__window">
                 <a class="modal__cansel">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -834,6 +911,7 @@
 
 
         <script src="js/fslightbox.js"></script>
+        <script src="js/swiper-bundle.min.js"></script>
         <script src="js/main.js"></script>
 </body>
 
