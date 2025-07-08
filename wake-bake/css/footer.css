@@ -1,21 +1,18 @@
 .footer {
     color: var(--general-bg);
     background: #AB8261;
-    padding: 30px 0 60px;
+    padding: 60px 0 66px;
 }
 
 .footer__inner {
     display: grid;
     gap: 40px 15px;
-    grid-template-columns: 1fr 1.2fr 1.2fr auto;
+    justify-content: space-between;
+    grid-template-columns: .9fr .9fr 1.1fr auto;
 }
 
-.footer__col {
-    margin-top: 30px;
-}
-
-.footer__col:last-child {
-    justify-items: end;
+.footer__col:first-child {
+    margin-top: -30px;
 }
 
 .footer__logo {
@@ -27,19 +24,8 @@
     width: 100%;
 }
 
-.socials__list {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.socials__link path {
-    transition: var(--transition);
-}
-
-.socials__link:hover path {
-    fill: var(--accent-color);
+.footer__logo-text {
+    margin-bottom: 20px;
 }
 
 .footer__col-list {
@@ -50,6 +36,10 @@
     margin-bottom: 10px;
 }
 
+.footer__col-item:last-child {
+    margin-bottom: 0;
+}
+
 .footer__col-link {
     display: block;
     padding: 5px 0;
@@ -57,38 +47,70 @@
     z-index: 1;
 }
 
-.footer__col-link:last-child {
-    margin-bottom: 0;
-}
-
 .footer__col-link::before {
-    z-index: -1;
     content: '';
     position: absolute;
     top: -8px;
-    left: -8px;
+    left: -13px;
+    z-index: -1;
     width: 34px;
     height: 34px;
-    border-radius: 50% 50%;
     background: var(--accent-color);
+    border-radius: 50%;
 
     opacity: 0;
-    transition: all .4s;
+    transition: var(--transition);
 }
 
 .footer__col-link:hover::before {
     opacity: 1;
 }
 
+.footer__contact-list {}
+
+.footer__contact-item {
+    margin-bottom: 10px;
+}
+
+.footer__contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.footer__col-tel {
+    margin-bottom: 47px;
+}
+
 .footer__col-number {
     display: block;
-    font-size: 24px;
     font-weight: 500;
-    line-height: 160%;
-    margin-bottom: 47px;
+    font-size: 24px;
+    line-height: 1.6;
     transition: var(--transition);
 }
 
 .footer__col-number:hover {
     color: var(--accent-color);
+}
+
+.footer__col-copy {
+    color: #DEC5B1;
+}
+
+.socials {
+    line-height: 0;
+}
+
+.socials__list {
+    display: flex;
+    gap: 15px;
+}
+
+.socials__item {}
+
+.socials__link path {
+    transition: var(--transition);
+}
+
+.socials__link:hover path {
+    fill: var(--accent-color);
 }
