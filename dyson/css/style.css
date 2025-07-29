@@ -563,3 +563,7 @@
 }
 .categories__next {
 }
+
+.swiper {
+    overflow: visible;
+}
