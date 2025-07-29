@@ -1,0 +1,129 @@
+(function () {
+
+    // Бургер
+
+    document.addEventListener('click', burgerInit)
+
+    function burgerInit(e) {
+
+        const burgerIcon = e.target.closest('.burger-icon')
+        const burgerNavLink = e.target.closest('.nav__link-burger')
+
+        if (!burgerIcon && !burgerNavLink) return
+
+        if (!document.body.classList.contains('body--opened-menu')) {
+            document.body.classList.add('body--opened-menu')
+        } else {
+            document.body.classList.remove('body--opened-menu')
+        }
+
+    }
+
+    // актив на показать еще
+    const buttons = document.querySelectorAll('.hints__list-item');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            // Снимаем активность со всех
+            buttons.forEach(b => b.classList.remove('active'));
+
+            // Добавляем активность нажатому элементу
+            btn.classList.add('active');
+        });
+    });
+    // Показать еще 
+    document.addEventListener("DOMContentLoaded", function () {
+        const button = document.querySelector(".top__hints-button");
+        const items = document.querySelectorAll(".hints__list-item");
+        const itemsPerClick = 4;
+
+        function showNextItems() {
+            const hiddenItems = document.querySelectorAll(".hints__list-item.hidden");
+            for (let i = 0; i < itemsPerClick && i < hiddenItems.length; i++) {
+                hiddenItems[i].classList.remove("hidden");
+            }
+
+            // Если больше скрытых элементов не осталось — меняем кнопку
+            if (document.querySelectorAll(".hints__list-item.hidden").length === 0) {
+                button.textContent = "Сбросить";
+            }
+        }
+
+        function resetItems() {
+            items.forEach((item, index) => {
+                if (index >= itemsPerClick) {
+                    item.classList.add("hidden");
+                }
+            });
+            button.textContent = "Показать ещё";
+        }
+
+        button.addEventListener("click", function () {
+            if (button.textContent === "Сбросить") {
+                resetItems();
+            } else {
+                showNextItems();
+            }
+        });
+
+        // Изначально скрываем всё, кроме первых 4
+        items.forEach((item, index) => {
+            if (index >= itemsPerClick) {
+                item.classList.add("hidden");
+            }
+        });
+    });
+
+    document.querySelectorAll('.counter').forEach(card => {
+        const minusBtn = card.querySelector('.minus');
+        const plusBtn = card.querySelector('.plus');
+        const numberEl = card.querySelector('.number');
+
+        const minusIcon = minusBtn.querySelector('.counter__button-icon');
+        const plusIcon = plusBtn.querySelector('.counter__button-icon');
+
+        let count = 1;
+        const min = 1;
+        const max = 10;
+
+        function updateCounter() {
+            numberEl.textContent = count;
+
+            if (count <= min) {
+                minusIcon.classList.add('inactive');
+                minusBtn.style.pointerEvents = 'none';
+            } else {
+                minusIcon.classList.remove('inactive');
+                minusBtn.style.pointerEvents = 'auto';
+            }
+
+            if (count >= max) {
+                plusIcon.classList.add('inactive');
+                plusBtn.style.pointerEvents = 'none';
+            } else {
+                plusIcon.classList.remove('inactive');
+                plusBtn.style.pointerEvents = 'auto';
+            }
+        }
+
+        plusBtn.addEventListener('click', () => {
+            if (count < max) {
+                count++;
+                updateCounter();
+            }
+        });
+
+        minusBtn.addEventListener('click', () => {
+            if (count > min) {
+                count--;
+                updateCounter();
+            }
+        });
+
+        updateCounter(); // запуск для конкретной карточки
+    });
+
+
+
+})()
+
