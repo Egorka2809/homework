@@ -9,6 +9,8 @@
     --transition: all .8s;
 }
 
+
+
 .body {
     font-family: "Open Sans", "Arial", sans-serif;
     line-height: 1.4;
@@ -39,6 +41,11 @@
     position: relative;
 }
 
+.container__categories {
+    width: 100%;
+    max-width: 1800px;
+}
+
 .title {
     font-size: 42px;
     font-weight: 900;
@@ -60,7 +67,8 @@
 .products__inner,
 .about,
 .advantages,
-.categories {
+.categories,
+.questions  {
     margin-top: 150px;
 }
 
