@@ -267,7 +267,7 @@
 .top__hints-button {
     position: absolute;
     top: 105px;
-    right: 0px;
+    right: 8px;
     color: var(--accent-color_2);
     font-size: 18px;
     line-height: 25px;
@@ -321,7 +321,7 @@
 .body__dropdown {
     position: relative;
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 8px;
     z-index: 4;
 }
 
@@ -387,6 +387,7 @@
 
 .categories__slider {
     position: relative;
+    min-width: 100px;
 }
 
 .categories__wrapper {}

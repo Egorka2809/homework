@@ -35,7 +35,7 @@
 .container {
     max-width: 1385px;
     margin: 0 auto;
-    padding: 0 0;
+    padding: 0 0px;
     height: 100%;
     width: 100%;
     position: relative;
@@ -43,7 +43,6 @@
 
 .container__categories {
     width: 100%;
-    max-width: 1800px;
 }
 
 .title {

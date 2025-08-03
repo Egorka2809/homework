@@ -34,44 +34,52 @@
     // Показать еще 
     document.addEventListener("DOMContentLoaded", function () {
         const button = document.querySelector(".top__hints-button");
-        const items = document.querySelectorAll(".hints__list-item");
-        const itemsPerClick = 4;
+        const items = Array.from(document.querySelectorAll(".hints__list-item"));
+        let itemsPerClick = getItemsPerClick();
 
-        function showNextItems() {
-            const hiddenItems = document.querySelectorAll(".hints__list-item.hidden");
-            for (let i = 0; i < itemsPerClick && i < hiddenItems.length; i++) {
-                hiddenItems[i].classList.remove("hidden");
-            }
-
-            // Если больше скрытых элементов не осталось — меняем кнопку
-            if (document.querySelectorAll(".hints__list-item.hidden").length === 0) {
-                button.textContent = "Сбросить";
-            }
+        function getItemsPerClick() {
+            return window.innerWidth <= 500 ? 3 : 4;
         }
 
-        function resetItems() {
+        function hideExtraItems() {
             items.forEach((item, index) => {
-                if (index >= itemsPerClick) {
+                if (index < itemsPerClick) {
+                    item.classList.remove("hidden");
+                } else {
                     item.classList.add("hidden");
                 }
             });
             button.textContent = "Показать ещё";
         }
 
+        function showNextItems() {
+            const hiddenItems = items.filter(item => item.classList.contains("hidden"));
+            for (let i = 0; i < itemsPerClick && i < hiddenItems.length; i++) {
+                hiddenItems[i].classList.remove("hidden");
+            }
+
+            if (items.filter(item => item.classList.contains("hidden")).length === 0) {
+                button.textContent = "Сбросить";
+            }
+        }
+
         button.addEventListener("click", function () {
             if (button.textContent === "Сбросить") {
-                resetItems();
+                hideExtraItems();
             } else {
                 showNextItems();
             }
         });
 
-        // Изначально скрываем всё, кроме первых 4
-        items.forEach((item, index) => {
-            if (index >= itemsPerClick) {
-                item.classList.add("hidden");
+        window.addEventListener("resize", () => {
+            const newCount = getItemsPerClick();
+            if (newCount !== itemsPerClick) {
+                itemsPerClick = newCount;
+                hideExtraItems();
             }
         });
+
+        hideExtraItems(); // изначально скрываем лишнее
     });
 
     document.querySelectorAll('.counter').forEach(card => {
@@ -154,7 +162,7 @@
     });
 
 
-        // Аккордеон
+    // Аккордеон
 
     const accordionLists = document.querySelectorAll('.accordion-list');
 
