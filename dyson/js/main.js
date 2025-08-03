@@ -95,7 +95,7 @@
 
         // Закрываем меню при клике вне кнопки и меню
         document.addEventListener('click', function (e) {
-            if (!e.target.closest('.dropdown__content') && !e.target.closest('.dropdown__content')) {
+            if (!e.target.closest('.body__dropdown-content') && !e.target.closest('.dropdown__content')) {
                 button.classList.remove('open');
             }
         });
