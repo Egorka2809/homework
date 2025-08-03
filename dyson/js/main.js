@@ -82,24 +82,6 @@
         hideExtraItems(); // изначально скрываем лишнее
     });
 
-    // dropdown 
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const button = document.querySelector('.body__dropdown-button');
-        const dropdownContent = document.querySelector('.dropdown__content');
-
-        button.addEventListener('click', function (e) {
-            e.stopPropagation(); // Чтобы клик не всплывал дальше
-            button.classList.toggle('open');
-        });
-
-        // Закрываем меню при клике вне кнопки и меню
-        document.addEventListener('click', function (e) {
-            if (!e.target.closest('.body__dropdown-content') && !e.target.closest('.dropdown__content')) {
-                button.classList.remove('open');
-            }
-        });
-    });
 
     // 
 
