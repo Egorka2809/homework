@@ -82,6 +82,72 @@
         hideExtraItems(); // изначально скрываем лишнее
     });
 
+    // dropdown
+    document.addEventListener("DOMContentLoaded", function () {
+        const dropdown = document.querySelector(".body__dropdown");
+        const button = dropdown.querySelector(".body__dropdown-button");
+        const content = dropdown.querySelector(".body__dropdown-content");
+
+        let isManualOpen = false;
+
+        function updateDropdownBehavior() {
+            const isMobile = window.innerWidth < 1024;
+
+            if (isMobile) {
+                // В мобильной версии: управление по клику
+                button.addEventListener("click", toggleDropdown);
+                document.addEventListener("click", closeOnOutsideClick);
+            } else {
+                // В десктопной версии: убираем JS-логику, оставляем hover через CSS
+                button.removeEventListener("click", toggleDropdown);
+                document.removeEventListener("click", closeOnOutsideClick);
+                content.style.display = ""; // Доверяем CSS
+                isManualOpen = false;
+            }
+        }
+
+        function toggleDropdown(e) {
+            e.stopPropagation();
+            isManualOpen = !isManualOpen;
+            content.style.display = isManualOpen ? "block" : "none";
+        }
+
+        function closeOnOutsideClick(e) {
+            if (!dropdown.contains(e.target)) {
+                isManualOpen = false;
+                content.style.display = "none";
+            }
+        }
+
+        // При загрузке
+        updateDropdownBehavior();
+
+        // При изменении размера окна (чтобы адаптировался динамически)
+        window.addEventListener("resize", updateDropdownBehavior);
+    });
+
+    // =======
+
+    function toggleDropdown(e) {
+        e.stopPropagation();
+        isManualOpen = !isManualOpen;
+
+        if (isManualOpen) {
+            content.style.display = "block";
+            dropdown.classList.add("active");
+        } else {
+            content.style.display = "none";
+            dropdown.classList.remove("active");
+        }
+    }
+
+    function closeOnOutsideClick(e) {
+        if (!dropdown.contains(e.target)) {
+            isManualOpen = false;
+            content.style.display = "none";
+            dropdown.classList.remove("active");
+        }
+    }
 
     // 
 

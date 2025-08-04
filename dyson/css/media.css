@@ -951,7 +951,20 @@
         font-size: 15px;
     }
 
+    /* ================ */
 
+    .body__dropdown.active .body__dropdown-button {
+        color: var(--accent-color_2);
+    }
+
+    .body__dropdown.active .dropdown__button-icon svg {
+        fill: var(--accent-color_2);
+        transform: rotate(180deg);
+    }
+
+    .body__dropdown.active .body__dropdown-content {
+        display: block;
+    }
 
 }
 
