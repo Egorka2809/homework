@@ -23,12 +23,15 @@
     const buttons = document.querySelectorAll('.hints__list-item');
 
     buttons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            // Снимаем активность со всех
-            buttons.forEach(b => b.classList.remove('active'));
-
-            // Добавляем активность нажатому элементу
-            btn.classList.add('active');
+        btn.addEventListener('click', () => {
+            // Если элемент уже активен — снимаем active
+            if (btn.classList.contains('active')) {
+                btn.classList.remove('active');
+            } else {
+                // Иначе — снимаем active со всех и добавляем текущему
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            }
         });
     });
     // Показать еще 
@@ -128,26 +131,39 @@
 
     // =======
 
-    function toggleDropdown(e) {
-        e.stopPropagation();
-        isManualOpen = !isManualOpen;
+    document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.querySelector(".body__dropdown-button");
+        const dropdown = document.querySelector(".body__dropdown-content");
 
-        if (isManualOpen) {
-            content.style.display = "block";
-            dropdown.classList.add("active");
-        } else {
-            content.style.display = "none";
-            dropdown.classList.remove("active");
-        }
-    }
+        function toggleDropdown() {
+            if (window.innerWidth < 1024) {
+                const isOpen = dropdown.style.display === "block";
+                dropdown.style.display = isOpen ? "none" : "block";
 
-    function closeOnOutsideClick(e) {
-        if (!dropdown.contains(e.target)) {
-            isManualOpen = false;
-            content.style.display = "none";
-            dropdown.classList.remove("active");
+                // Добавим/удалим класс active для кнопки, чтобы стили менялись
+                btn.classList.toggle("active", !isOpen);
+            }
         }
-    }
+
+        btn.addEventListener("click", toggleDropdown);
+
+        // Для сброса при ресайзе экрана
+        window.addEventListener("resize", () => {
+            if (window.innerWidth >= 1024) {
+                dropdown.style.display = "";
+                btn.classList.remove("active");
+            } else {
+                dropdown.style.display = "none";
+                btn.classList.remove("active");
+            }
+        });
+
+        // При загрузке страницы — прячем меню на мобильных
+        if (window.innerWidth < 1024) {
+            dropdown.style.display = "none";
+            btn.classList.remove("active");
+        }
+    });
 
     // 
 
