@@ -67,7 +67,8 @@
 .about,
 .advantages,
 .categories,
-.questions  {
+.questions,
+.news  {
     margin-top: 150px;
 }
 
@@ -102,6 +103,7 @@
     opacity: 1;
     visibility: visible;
 }
+
 
 
 /* .modal {

@@ -34,7 +34,7 @@
             }
         });
     });
-    // Показать еще 
+    // Показать еще categories
     document.addEventListener("DOMContentLoaded", function () {
         const button = document.querySelector(".top__hints-button");
         const items = Array.from(document.querySelectorAll(".hints__list-item"));
@@ -82,7 +82,61 @@
             }
         });
 
-        hideExtraItems(); // изначально скрываем лишнее
+        hideExtraItems();
+    });// изначально скрываем лишнее
+
+    // Показать еще  news
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        function initShowMore(buttonSelector, itemsContainerSelector, itemsPerClick) {
+            const button = document.querySelector(buttonSelector);
+            
+            if (!button) return;
+
+            const originalHTML = button.innerHTML;
+            const items = Array.from(document.querySelector(itemsContainerSelector).querySelectorAll(".news__grid-item"));
+            let visibleCount = 0;
+
+            function showItems() {
+                const nextItems = items.slice(visibleCount, visibleCount + itemsPerClick);
+                nextItems.forEach(item => item.classList.remove("hidden"));
+                visibleCount += nextItems.length;
+
+                if (visibleCount >= items.length) {
+                    button.textContent = "Сбросить";
+                    button.classList.add("center-text");
+                }
+            }
+
+            function hideItems() {
+                items.forEach((item, index) => {
+                    if (index >= itemsPerClick) {
+                        item.classList.add("hidden");
+                    }
+                });
+                visibleCount = itemsPerClick;
+                button.innerHTML = originalHTML;
+                button.classList.remove("center-text");
+            }
+
+            button.addEventListener("click", function () {
+                if (visibleCount >= items.length) {
+                    hideItems();
+                } else {
+                    showItems();
+                }
+            });
+
+            hideItems();
+        }
+
+        // Десктоп — показывать по 3
+        initShowMore(".news__button-desktop", ".news__grid", 3);
+
+        // Мобайл — показывать по 2
+        initShowMore(".news__button-mobile", ".news__grid--mobile", 2);
+
     });
 
     // dropdown
@@ -283,5 +337,3 @@
 
 
 })()
-
-
