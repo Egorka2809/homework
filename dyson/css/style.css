@@ -788,17 +788,17 @@
     display: flex;
     justify-content: center;
     gap: 29px;
-    margin-top: 80px;
     margin-bottom: 150px;
     width: 100%;
     max-width: 310px;
     font-size: 24px;
     font-weight: 400;
     line-height: 33px;
-    padding: 10px 10px 10px 10px;
+    padding: 15px 40px 15px 40px;
     background: none;
     border: 1px solid rgb(17, 17, 17);
     border-radius: var(--border-radius);
+    cursor: pointer;
 }
 
 .news__button-icon {
