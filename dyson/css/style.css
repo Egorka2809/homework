@@ -822,3 +822,163 @@
     font-size: 24px;
     margin-bottom: 150px;
 }
+
+/* ==============contact=============== */
+
+.main__contact {
+    background: var(--color-bg);
+}
+
+.contact__inner {
+    display: flex;
+    justify-content: center;
+    gap: 135px;
+    padding-top: 150px;
+    padding-bottom: 115px;
+}
+
+.contact__connection {
+    width: 100%;
+}
+
+.contact__title {
+    font-size: 42px;
+    line-height: 50px;
+    margin-bottom: 50px;
+}
+
+.connection__form {}
+
+.connection__label {
+    display: grid;
+}
+
+.connection {}
+
+.contact__input {
+    font-size: 18px;
+    line-height: 25px;
+    padding-bottom: 7px;
+    width: 100%;
+    max-width: 555px;
+    background: var(--color-bg);
+    border-bottom: 1px solid #111111;
+}
+
+.contact__input--one {
+    margin-bottom: 20px;
+}
+
+.contact__button {
+    margin-top: 70px;
+    width: 100%;
+    max-width: 280px;
+    height: 64px;
+    border-radius: var(--border-radius);
+    background: rgb(17, 17, 17);
+    color: rgb(248, 248, 248);
+    font-size: 24px;
+    line-height: 33px;
+    transition: all .2s;
+}
+
+.contact__button--subscribe {
+    margin-top: 70px;
+    width: 100%;
+    max-width: 280px;
+    height: 64px;
+    border-radius: var(--border-radius);
+    background: rgb(17, 17, 17);
+    color: rgb(248, 248, 248);
+    font-size: 24px;
+    line-height: 33px;
+    transition: all .2s;
+}
+
+/* Стиль кнопки при hover */
+.contact__button--subscribe:hover {
+    background: var(--accent-color_2);
+}
+
+
+
+
+.contact__button:hover {
+    background: var(--accent-color_2);
+}
+
+.subscribed {
+    background: var(--hover-color);
+}
+
+.subscribed:hover {
+    background: var(--hover-color);
+    cursor: default;
+}
+
+.contact__subscribe {
+    width: 100%;
+}
+
+.subscribe__label {}
+
+.subscribe {}
+
+.subscribe__button {}
+
+.contact__check-label {
+    display: flex;
+    gap: 16px;
+    font-size: 16px;
+    line-height: 120%;
+    margin-top: 35px;
+}
+
+.contact__checkbox {}
+
+
+
+.contact__check-label a {
+    text-decoration: underline;
+    transition: all .2s;
+
+}
+
+.contact__check-label a:hover {
+    color: var(--hover-color);
+}
+
+.contact__checkbox {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgb(17, 17, 17);
+    border-radius: 3px;
+    transition: all .2s;
+    border-radius: 4px;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+    margin-top: 5px;
+}
+
+
+.contact__checkbox::before {
+    content: '';
+    position: absolute;
+    margin-left: 6px;
+    inset: 0;
+    width: 17px;
+
+    background: url("../img/icons/check_mark.svg") 50% 50% no-repeat;
+    opacity: 0;
+    transition: all .2s;
+}
+
+.contact__checkbox:hover {}
+
+.contact__checkbox:checked {}
+
+.contact__checkbox:checked::before {
+    opacity: 1;
+}

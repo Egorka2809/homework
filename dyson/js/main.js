@@ -91,7 +91,7 @@
 
         function initShowMore(buttonSelector, itemsContainerSelector, itemsPerClick) {
             const button = document.querySelector(buttonSelector);
-            
+
             if (!button) return;
 
             const originalHTML = button.innerHTML;
@@ -332,6 +332,21 @@
 
         });
 
+    });
+    // =============
+
+    const telInputs = document.querySelectorAll('input[type="tel"]')
+    const im = new Inputmask('+7 (999) 999-99-99')
+    im.mask(telInputs)
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const button = document.querySelector(".contact__button--subscribe");
+
+        button.addEventListener("click", function () {
+            if (!button.classList.contains("subscribed")) {
+                button.classList.add("subscribed");
+            }
+        });
     });
 
 
