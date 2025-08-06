@@ -1338,7 +1338,7 @@
     }
 
     .news {
-        margin-top: 120px;
+        margin-top: 75px;
     }
 
     .news__title {
@@ -1396,14 +1396,14 @@
 
     .news__button {
         padding: 10px 10px 10px 20px;
-        margin-top: 40px;
-        margin-bottom: 70px;
+        margin-top: 0px;
+        margin-bottom: -50px;
         max-width: 250px;
         font-size: 20px;
     }
 
     .news__button-desktop.center-text {
-        margin-top: 40px;
+        margin-top: 0px;
         margin-bottom: 70px;
         max-width: 250px;
         font-size: 20px;
@@ -1638,6 +1638,10 @@
         width: 44%;
     }
 
+    .categories__card {
+        height: 545px;
+    }
+
     .top-title {
         font-size: 33px;
         margin-bottom: 35px;
@@ -1868,7 +1872,7 @@
 
     .categories__card {
         max-width: 370px;
-        height: 460px;
+        height: 445px;
     }
 
     .categories__top-text {
@@ -2003,7 +2007,6 @@
         gap: 20px;
         padding: 5px 10px 5px 10px;
         margin-top: 20px;
-        margin-bottom: 50px;
         max-width: 180px;
         font-size: 14px;
     }
@@ -2281,7 +2284,7 @@
     }
 
     .categories__card {
-        height: 380px;
+        height: 365px;
     }
 
     .categories__top-text {
@@ -2614,7 +2617,7 @@
     }
 
     .categories__card {
-        height: 335px;
+        height: 315px;
     }
 
     .categories__top-text {
@@ -2797,7 +2800,6 @@
         gap: 18px;
         padding: 8px 15px 8px 15px;
         margin-top: 0px;
-        margin-bottom: 50px;
         max-width: 180px;
         font-size: 15px;
     }
@@ -2822,9 +2824,13 @@
         gap: 20px;
         padding: 8px 50px 9px 50px;
         margin-top: 30px;
-        margin-bottom: 50px;
+        margin-bottom: -110px;
         max-width: 100px;
         font-size: 15px;
+    }
+
+    .footer {
+        margin-top: 110px;
     }
 
 
@@ -3077,7 +3083,7 @@
     }
 
     .categories__card {
-        height: 323px;
+        height: 305px;
     }
 
     .categories__top-text {
