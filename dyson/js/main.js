@@ -300,6 +300,44 @@
         },
     });
 
+    // =============================
+    document.addEventListener("DOMContentLoaded", function () {
+        const items = Array.from(document.querySelectorAll(".reviews__item"));
+        const button = document.querySelector(".reviews__button");
+        const originalText = button.textContent; // сохраняем текст из HTML
+        const itemsPerClick = 3;
+        let visibleCount = 3;
+
+        // Скрываем всё кроме первых 3
+        items.forEach((item, index) => {
+            if (index >= visibleCount) {
+                item.classList.add("hidden");
+            }
+        });
+
+        button.addEventListener("click", () => {
+            if (visibleCount >= items.length) {
+                // Сброс
+                items.forEach((item, index) => {
+                    if (index >= 3) {
+                        item.classList.add("hidden");
+                    }
+                });
+                visibleCount = 3;
+                button.textContent = originalText; // возвращаем "Показать ещё"
+            } else {
+                // Показать ещё
+                const nextItems = items.slice(visibleCount, visibleCount + itemsPerClick);
+                nextItems.forEach(item => item.classList.remove("hidden"));
+                visibleCount += nextItems.length;
+
+                if (visibleCount >= items.length) {
+                    button.textContent = "Сбросить";
+                }
+            }
+        });
+    });
+
 
     // Аккордеон
 
