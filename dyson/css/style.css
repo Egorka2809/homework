@@ -597,8 +597,7 @@
 
 /* =================reveiws============= */
 
-.main__reviews {
-}
+.main__reviews {}
 
 
 
@@ -789,6 +788,231 @@
     display: none;
     margin: 0 !important;
 }
+
+.about__img>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 50%;
+}
+
+.about__img-conrol {
+    position: absolute;
+    bottom: 4.7%;
+    left: 5%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 300px;
+    text-align: left;
+    background: #957b97e6;
+    border-radius: var(--border-radius);
+    padding: 15px 20px;
+    color: var(--general-bg);
+}
+
+.about__img-button {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: var(--general-bg);
+    position: relative;
+}
+
+.about__img-button::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    border: 1px solid var(--accent-color-2);
+
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.about__img-button:hover::before {
+    opacity: 1;
+}
+
+.about__body {}
+
+.about__heading {
+    margin-bottom: 30px;
+}
+
+.about__title {}
+
+.about__title-text {}
+
+.about__text {}
+
+.about__grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.about__grid-item {
+    background: var(--accent-bg);
+    border-radius: var(--border-radius);
+    padding: 29px 24px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.about__grid-img {
+    border: 1px solid var(--general-text);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+
+    background: #11111188;
+    padding: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all .6s;
+}
+
+.body--opened-modal .modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__window {
+    position: relative;
+    background: rgba(255, 255, 255, 1);
+    border-radius: var(--border-radius);
+    padding: 70px 80px;
+    width: 100%;
+    max-width: 740px;
+    height: 835px;
+}
+
+.modal__cancel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 3px;
+    transition: all .2s;
+}
+
+.modal__cancel:hover path{
+    fill: var(--accent-color_2);
+}
+
+
+.modal__title {
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.modal__reviews {}
+
+.modal__reviews-title {
+    font-size: 18px;
+    line-height: 25px;
+    color: var(--hover-color);
+    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.write__reviews-stars {
+    margin-bottom: 5px; 
+}
+
+.estimation__stars-icon {}
+
+.modal__form {
+    display: grid;
+    gap: 20px;
+}
+
+.modal__label {
+    display: grid;
+    gap: 20px;
+}
+
+.modal__input {
+    border: 1px solid rgba(217, 217, 217, 1);
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-width: 585px;
+    padding: 15px 25px;
+    font-size: 18px;
+}
+
+.contact__input--last {
+    height: 200px;
+    padding-bottom: 160px;
+}
+
+.form__download {
+    border: 1px solid rgba(217, 217, 217, 1);
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-width: 585px;
+    padding: 20px 64px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.form__download-button {
+    color: var(--accent-color_2);
+    font-size: 18px;
+    line-height: 25px;
+    background: none;
+    border-bottom: 1px solid var(--accent-color_2);
+}
+
+.form__download-text {
+    font-size: 18px;
+    line-height: 120%;
+    color: var(--hover-color);
+    
+}
+.form__download-text span{
+    display: flex;
+    justify-content: center;
+}
+
+.modal__button {
+    width: 100%;
+    max-width: 275px;
+    height: 64px;
+    margin-top: 50px;
+    border-radius: var(--border-radius);
+    background: rgb(17, 17, 17);
+    color: rgb(248, 248, 248);
+    font-size: 24px;
+    transition: all .2s;
+}
+.modal__button:hover {
+    background: var(--accent-color_2);
+}
+
 
 /* ==========accordion========== */
 .main__questions {
@@ -1061,6 +1285,7 @@
     border: 1px solid var(--accent-color_2);
     color: var(--accent-color_2);
 }
+
 
 /* ==============contact=============== */
 
