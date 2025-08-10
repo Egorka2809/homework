@@ -3498,7 +3498,7 @@
     .modal__window {
         padding: 25px 40px;
         max-width: 340px;
-        height: 334px;
+        height: 350px;
     }
 
     .modal__title {
@@ -3523,7 +3523,7 @@
     }
 
     .modal__input {
-        padding: 2px 8px;
+        padding: 5px 10px;
         font-size: 10px;
     }
 
@@ -3533,8 +3533,8 @@
     }
 
     .contact__input--last {
-        height: 55px;
-        padding-bottom: 35px;
+        height: 65px;
+        padding-bottom: 42px;
     }
 
     .form__download-button {
@@ -3548,7 +3548,7 @@
     }
 
     .form__download {
-        padding: 10px 36px;
+        padding: 12px 36px;
         gap: 8px;
     }
 
@@ -3557,6 +3557,14 @@
         height: 33px;
         margin-top: 14px;
         font-size: 10px;
+    }
+
+    .modal__form {
+        gap: 8px;
+    }
+
+    .modal__label {
+        gap: 8px;
     }
 
     .modal__cancel svg {

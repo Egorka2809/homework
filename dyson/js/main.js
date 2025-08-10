@@ -304,7 +304,7 @@
     document.addEventListener("DOMContentLoaded", function () {
         const items = Array.from(document.querySelectorAll(".reviews__item"));
         const button = document.querySelector(".reviews__button");
-        const originalText = button.textContent; // сохраняем текст из HTML
+        const originalHTML = button.innerHTML; // сохраняем HTML, а не только текст
         const itemsPerClick = 3;
         let visibleCount = 3;
 
@@ -324,7 +324,7 @@
                     }
                 });
                 visibleCount = 3;
-                button.textContent = originalText; // возвращаем "Показать ещё"
+                button.innerHTML = originalHTML; // возвращаем исходный HTML (с иконкой)
             } else {
                 // Показать ещё
                 const nextItems = items.slice(visibleCount, visibleCount + itemsPerClick);
@@ -332,7 +332,7 @@
                 visibleCount += nextItems.length;
 
                 if (visibleCount >= items.length) {
-                    button.textContent = "Сбросить";
+                    button.textContent = "Сбросить"; // тут можно оставить только текст
                 }
             }
         });
