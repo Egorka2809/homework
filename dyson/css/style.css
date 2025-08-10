@@ -916,7 +916,7 @@
     transition: all .2s;
 }
 
-.modal__cancel:hover path{
+.modal__cancel:hover path {
     fill: var(--accent-color_2);
 }
 
@@ -938,7 +938,9 @@
 }
 
 .write__reviews-stars {
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
+    display: flex;
+    gap: 2px;
 }
 
 .estimation__stars-icon {}
@@ -991,9 +993,10 @@
     font-size: 18px;
     line-height: 120%;
     color: var(--hover-color);
-    
+
 }
-.form__download-text span{
+
+.form__download-text span {
     display: flex;
     justify-content: center;
 }
@@ -1009,6 +1012,7 @@
     font-size: 24px;
     transition: all .2s;
 }
+
 .modal__button:hover {
     background: var(--accent-color_2);
 }
