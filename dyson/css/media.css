@@ -3285,7 +3285,7 @@
     }
 
     .categories__card {
-        height: 315px;
+        height: 335px;
     }
 
     .categories__top-text {
@@ -3299,7 +3299,7 @@
     }
 
     .info {
-        margin: 0px 0 -10px 8px;
+        margin: 0px 0 5px 8px;
         font-size: 10px;
     }
 
@@ -3324,7 +3324,7 @@
     }
 
     .discount_no {
-        margin-top: 8px;
+        margin-top: 3px;
         font-size: 12px;
     }
 
@@ -3332,7 +3332,7 @@
         margin-top: -4px;
         margin-left: -1px;
         gap: 40px;
-        margin-bottom: -24px;
+        margin-bottom: -13px;
     }
 
     .basket__button {
