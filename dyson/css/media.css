@@ -2102,6 +2102,10 @@
         padding: 0 0px;
     }
 
+    .reviews__button-icon svg {
+        max-width: 15px;
+    }
+
     /* ========== */
 
     .footer__col-title {
@@ -3367,6 +3371,10 @@
     }
 
     /* ========== */
+
+    .reviews {
+        margin-top: 45px;
+    }
 
     .reviews__inner {
         padding: 0 20px;
