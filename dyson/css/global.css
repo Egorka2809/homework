@@ -18,6 +18,10 @@
     color: var(--general-text);
 }
 
+.body--opened-modal {
+    overflow: hidden;
+}
+
 .wrapper {
     position: relative;
     min-height: 100%;
@@ -68,7 +72,7 @@
 .categories,
 .questions,
 .news,
-.reviews  {
+.reviews {
     margin-top: 150px;
 }
 

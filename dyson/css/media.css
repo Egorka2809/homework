@@ -2026,6 +2026,7 @@
 
     .main__categories {
         padding: 70px 0px 0px 0px;
+        margin-top: 90px;
     }
 
     .container__categories {
@@ -2093,9 +2094,12 @@
     }
 
     /* ========== */
+    .reviews {
+        margin-top: 90px;
+    }
 
     .reviews__inner {
-        padding: 0 40px;
+        padding: 0 0px;
     }
 
     /* ========== */
@@ -2356,6 +2360,22 @@
 
     /* ============= */
 
+
+    .reviews__inner {
+        padding: 0 20px;
+    }
+
+    .reviews__button {
+        gap: 20px;
+        padding: 5px 10px 0px 10px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        max-width: 180px;
+        font-size: 14px;
+    }
+
+    /* ========== */
+
     .main__news {
         padding: 0 50px;
     }
@@ -2420,15 +2440,7 @@
         font-size: 14px;
     }
 
-    .reviews__button {
-        gap: 20px;
-        padding: 5px 10px 5px 10px;
-        margin-top: 0px;
-        margin-bottom: 50px;
-        max-width: 180px;
-        font-size: 14px;
 
-    }
 
     .news__button-icon {
         width: 15px;
@@ -3176,6 +3188,7 @@
 
     .main__categories {
         padding: 30px 0px 0px 0px;
+        margin-top: 45px;
     }
 
     .container__categories {
@@ -3232,7 +3245,7 @@
         display: flex;
         font-size: 12px;
         margin-left: 74px;
-        margin-top: 50px;
+        margin-top: 15px;
         margin-bottom: -47px;
     }
 
@@ -3282,7 +3295,7 @@
     }
 
     .info {
-        margin: 0px 0 -10px 11px;
+        margin: 0px 0 -10px 8px;
         font-size: 10px;
     }
 
@@ -3357,6 +3370,13 @@
 
     .reviews__inner {
         padding: 0 20px;
+    }
+
+    .reviews__button {
+        margin-top: 30px;
+        margin-bottom: 50px;
+        max-width: 180px;
+        font-size: 14px;
     }
 
     /* ==========accordion========== */
@@ -3785,7 +3805,6 @@
         display: flex;
         font-size: 12px;
         margin-left: 74px;
-        margin-top: 50px;
         margin-bottom: -47px;
     }
 

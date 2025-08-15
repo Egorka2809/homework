@@ -5,7 +5,6 @@
     document.addEventListener('click', burgerInit)
 
     function burgerInit(e) {
-
         const burgerIcon = e.target.closest('.burger-icon')
         const burgerNavLink = e.target.closest('.nav__link-burger')
 
@@ -16,7 +15,6 @@
         } else {
             document.body.classList.remove('body--opened-menu')
         }
-
     }
 
     // актив на показать еще
@@ -270,37 +268,34 @@
         updateCounter(); // запуск для конкретной карточки
     });
 
-    new Swiper('.swiper', {
-        // Optional parameters
-        loop: true,
-        speed: 500,
-        spaceBetween: 30,
-        slidesPerView: 1.15,
-        width: 1600,
 
 
-        // If we need pagination
-        pagination: {
-            el: '.categories__pagination',
-            type: 'fraction',
-            renderFraction: function (currentClass, totalClass) {
-                return '<span class="' + currentClass + '"></span> из <span class="' + totalClass + '"></span>';
+
+        // Инициализируем swiper и сохраняем в переменную swiper
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            speed: 500,
+            spaceBetween: 30,
+            slidesPerView: 1.15,
+            width: 1600,
+            pagination: {
+                el: '.categories__pagination',
+                type: 'fraction',
+                renderFraction: function (currentClass, totalClass) {
+                    return '<span class="' + currentClass + '"></span> из <span class="' + totalClass + '"></span>';
+                },
             },
-        },
+            navigation: {
+                nextEl: '.categories__next',
+                prevEl: '.categories__prev',
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
 
-        // Navigation arrows
-        navigation: {
-            nextEl: '.categories__next',
-            prevEl: '.categories__prev',
-        },
 
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-    });
 
-    // =============================
     document.addEventListener("DOMContentLoaded", function () {
         const items = Array.from(document.querySelectorAll(".reviews__item"));
         const button = document.querySelector(".reviews__button");
